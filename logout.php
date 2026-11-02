@@ -1,15 +1,27 @@
 <?php
-    include_once("fungsi_lib.php");
-    mulai_session();
+session_start();
 
-    if (isset($_SESSION['user'])) {
-        catat_log("LOGOUT", ["email" => $_SESSION['user']['email']]);
-    }
+// Hapus seluruh data sesi
+$_SESSION = [];
 
-    $_SESSION = array();            // mengosongkan seluruh data session
-    session_regenerate_id(true);    // mengganti session id dan menghapus data lama
+// Hapus cookie sesi jika digunakan
+if (ini_get('session.use_cookies')) {
+    $params = session_get_cookie_params();
 
-    set_flash("Anda telah logout.");
-    header("Location: login.php");
-    exit();
-?>
+    setcookie(
+        session_name(),
+        '',
+        time() - 42000,
+        $params['path'],
+        $params['domain'],
+        $params['secure'],
+        $params['httponly']
+    );
+}
+
+// Hancurkan sesi login
+session_destroy();
+
+// Arahkan kembali ke halaman login
+header('Location: login.php');
+exit;

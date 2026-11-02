@@ -1,0 +1,199 @@
+
+/* ========================================
+   IRZIMART DASHBOARD
+   Purple • Deep Purple • Lime
+======================================== */
+
+:root {
+    --irzi-purple: #8655E8;
+    --irzi-deep: #482875;
+    --irzi-lime: #C8F52F;
+    --irzi-ink: #171321;
+    --irzi-bg: #F4EFFA;
+    --irzi-soft: #F8F3FF;
+}
+
+/* Reset dasar */
+* {
+    box-sizing: border-box;
+}
+
+/* Logo sidebar */
+.sidebar-logo {
+    display: block;
+    width: 44px;
+    height: 44px;
+    margin: 0 auto;
+    object-fit: contain;
+}
+
+/* Foto profil */
+.profile-image {
+    display: block;
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    border: 2px solid rgba(134, 85, 232, 0.15);
+    border-radius: 50%;
+    background: var(--irzi-bg);
+    object-fit: cover;
+}
+
+/* Gambar material pilihan */
+.material-image {
+    display: block;
+    width: 100%;
+    height: 144px;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+/* Banner promosi toko */
+.store-banner {
+    overflow: hidden;
+    width: 100%;
+    border: 1px solid rgba(204, 195, 214, 0.45);
+    border-radius: 16px;
+    background: #fff;
+}
+
+.banner-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 260px;
+    object-fit: cover;
+}
+
+/* Panel dan kartu */
+.panel {
+    border: 1px solid rgba(204, 195, 214, 0.45);
+    border-radius: 20px;
+    background: #fff;
+}
+
+.module-card {
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.module-card:hover {
+    transform: translateY(-3px);
+    border-color: #cbb4ff;
+    box-shadow: 0 12px 30px rgba(72, 40, 117, 0.09);
+}
+
+/* Sidebar dan layout dashboard */
+.sidebar {
+    width: 76px;
+}
+
+.main-shell {
+    margin-left: 76px;
+}
+
+.topbar {
+    left: 76px;
+}
+
+/* Responsif tablet */
+@media (max-width: 900px) {
+    .sidebar {
+        width: 60px;
+    }
+
+    .main-shell {
+        margin-left: 60px;
+    }
+
+    .topbar {
+        left: 60px;
+    }
+
+    .topbar-inner {
+        padding-right: 16px;
+        padding-left: 16px;
+    }
+
+    .dashboard-content {
+        padding: 16px;
+    }
+
+    .hide-small {
+        display: none;
+    }
+}
+
+/* Responsif ponsel */
+@media (max-width: 640px) {
+    .sidebar {
+        position: static;
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 10px;
+    }
+
+    .sidebar nav {
+        display: flex;
+        flex-direction: row;
+        gap: 4px;
+    }
+
+    .sidebar-brand {
+        display: flex;
+        flex-direction: row;
+        gap: 8px;
+    }
+
+    .sidebar-logout {
+        display: none;
+    }
+
+    .main-shell {
+        margin-left: 0;
+    }
+
+    .topbar {
+        position: static;
+        left: auto;
+    }
+
+    .topbar-inner {
+        height: auto;
+        min-height: 70px;
+    }
+
+    .dashboard-content {
+        padding: 12px;
+    }
+
+    .welcome-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stat-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .sidebar-logo {
+        width: 36px;
+        height: 36px;
+    }
+
+    .profile-image {
+        width: 34px;
+        height: 34px;
+    }
+
+    .material-image {
+        height: 120px;
+    }
+
+    .banner-image {
+        max-height: 180px;
+    }
+}
